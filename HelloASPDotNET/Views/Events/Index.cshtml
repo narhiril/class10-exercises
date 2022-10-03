@@ -10,13 +10,26 @@
 </p>
 
 <div>
-@if(ViewBag.events?.Count > 0 ?? false)
+@if(ViewBag.Events?.Count > 0 ?? false)
 {
-    <ul>
-    @foreach (string ev in ViewBag.events){
-        <li>@ev</li>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+
+    @foreach (KeyValuePair<string, string> entry in ViewBag.Events)
+    {
+        <tr>
+            <td>@entry.Key</td>
+            <td>@entry.Value</td>
+        </tr>    
     }
-    </ul>
+    </tbody>
+    </table>
 }
 else
 {

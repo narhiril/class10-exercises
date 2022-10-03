@@ -5,12 +5,12 @@ namespace HelloASPDotNET.Controllers
 {
     public class EventsController : Controller
     {
-        public static List<string> events = new List<string>();
+        public static Dictionary<string, string> Events = new Dictionary<string, string>();
 
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.events = events;
+            ViewBag.Events = Events;
 
             return View();
         }
@@ -23,9 +23,9 @@ namespace HelloASPDotNET.Controllers
 
         [HttpPost]
         [Route("/Events/Add")]
-        public IActionResult AddEvent(string eventName)
+        public IActionResult AddEvent(string eventName, string eventDesc)
         {
-            events.Add(eventName);
+            Events.Add(eventName, eventDesc);
             return Redirect("/Events");
         }
     }

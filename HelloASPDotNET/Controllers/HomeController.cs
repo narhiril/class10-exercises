@@ -20,7 +20,7 @@ namespace HelloASPDotNET.Controllers
 
         public IActionResult Index()
         {
-            return Redirect("/hello");
+            return Redirect("/events");
         }
 
         public IActionResult Privacy()
