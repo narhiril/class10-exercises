@@ -5,6 +5,10 @@
 }
 
 <h1>Events:</h1>
+<p>
+    <a asp-controller="Events" asp-action="Add">Add Event</a>
+</p>
+
 <div>
 @if(ViewBag.events?.Count > 0 ?? false)
 {

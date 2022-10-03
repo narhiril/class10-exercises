@@ -10,13 +10,23 @@ namespace HelloASPDotNET.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            events.Add("Halloween");
-            events.Add("Rocket Launch");
-            events.Add("Relatives Visiting");
-            events.Add("LaunchCode");
             ViewBag.events = events;
 
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("/Events/Add")]
+        public IActionResult AddEvent(string eventName)
+        {
+            events.Add(eventName);
+            return Redirect("/Events");
         }
     }
 }
