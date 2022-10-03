@@ -5,6 +5,9 @@
 }
 <h1>Add Event:</h1>
 <form method='post'>
-    <input type='text' name='eventName' required />
-    <input type='submit' value='Submit' />
+    <div class='form-group'>
+        <label for='eventName'>Name:</label>
+        <input id='eventName' type='text' name='eventName' required />
+    </div>
+    <button type='submit' class='btn-primary'>Submit</button>
 </form>
