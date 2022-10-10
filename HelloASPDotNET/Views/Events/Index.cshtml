@@ -21,11 +21,12 @@
         </thead>
         <tbody>
 
-    @foreach (KeyValuePair<string, string> entry in ViewBag.Events)
+    @foreach (var evt in ViewBag.Events)
     {
         <tr>
-            <td>@entry.Key</td>
-            <td>@entry.Value</td>
+            <td>@evt.Name</td>
+            <td>@evt.Description</td>
+            <td><a asp-controller='Events' asp-action='Edit' asp-route-id='@evt.Id'>Edit Event</a></td>
         </tr>    
     }
     </tbody>

@@ -1,6 +1,6 @@
 using System;
 
-namespace HelloASPDotNET.Models
+namespace CodingEvents.Models
 {
     public class ErrorViewModel
     {
